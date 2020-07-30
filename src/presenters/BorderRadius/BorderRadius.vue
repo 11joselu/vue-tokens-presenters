@@ -1,6 +1,6 @@
 <template>
-  <Card data-testid="border">
-    <Box :border="token.value" backgroundColor="transparent"></Box>
+  <Card data-testid="borderRadius">
+    <Box :borderRadius="token.value" backgroundColor="transparent"></Box>
     <TextElement isAlternative="true">{{ token.value }}</TextElement>
   </Card>
 </template>
@@ -19,7 +19,7 @@ import TextElement from '@/ui/Text/Text.vue';
     TextElement,
   },
 })
-export default class Border extends Vue {
+export default class BorderRadius extends Vue {
   @Prop({ required: true }) private token!: Token;
 }
 </script>
