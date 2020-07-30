@@ -20,11 +20,9 @@ describe('BorderRadius.vue', () => {
   });
 
   it('render given BorderRadius', () => {
-    const { element: BorderRadiusedElement } = wrapper.find(
-      '[data-testid=box]'
-    );
+    const { element: borderedElement } = wrapper.find('[data-testid=box]');
 
-    const styles = window.getComputedStyle(BorderRadiusedElement);
+    const styles = window.getComputedStyle(borderedElement);
 
     // @ts-ignore
     expect(styles['border-radius']).toBe('30%');
