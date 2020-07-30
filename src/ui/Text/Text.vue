@@ -8,7 +8,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Text extends Vue {
+export default class TextElement extends Vue {
   @Prop({ default: false }) private readonly isAlternative!: boolean;
   @Prop({ default: 'inherit' }) private readonly fontSize!: string;
   @Prop({ default: 'inherit' }) private readonly fontWeight!: string;
