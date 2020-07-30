@@ -18,7 +18,7 @@
 > List of presenter for design tokens
 
 <center>
-  <img src="https://raw.githubusercontent.com/11joselu/vue-tokens-presenters/master/media/demo-storybook-v1.3.gif" width="100%" />
+  <img src="https://raw.githubusercontent.com/11joselu/vue-tokens-presenters/master/media/demo-storybook-v1.3.gif?token=ACCIMTDBLKNHYLZ277RZIYC7EMGZ6" width="100%" />
 </center>
 
 ### [Homepage](https://github.com/11joselu/vue-tokens-presenters.git#readme)
