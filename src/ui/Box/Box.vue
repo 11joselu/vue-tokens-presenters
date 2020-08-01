@@ -26,6 +26,7 @@ export default class Box extends Vue {
       'background-color': this.backgroundColor,
       opacity: this.opacity,
       'box-shadow': this.boxShadow,
+      'box-sizing': 'border-box',
     };
   }
 }
