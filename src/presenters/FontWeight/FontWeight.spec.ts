@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import FontWeight from '@/presenters/FontWeight/FontWeight.vue';
 
 describe('FontWeight.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: 'bold',
       declaration: 'FontWeight',
     };
 
-    wrapper = mount(FontWeight, {
+    render(FontWeight, {
       propsData: {
         token,
       },
@@ -20,9 +16,7 @@ describe('FontWeight.vue', () => {
   });
 
   it('render given FontWeight', () => {
-    const { element: colorElement } = wrapper.find(
-      '[data-testid=fontWeightSample]'
-    );
+    const colorElement = screen.getByTestId('fontWeightSample');
 
     const styles = window.getComputedStyle(colorElement);
 
@@ -31,7 +25,7 @@ describe('FontWeight.vue', () => {
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p:not([data-testid])');
+    const variableElement = screen.getByText('bold');
 
     expect(variableElement.textContent).toBe('bold');
   });

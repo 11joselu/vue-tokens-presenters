@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import Spacing from '@/presenters/Spacing/Spacing.vue';
 
 describe('Spacing.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '20px',
       declaration: 'SpacingVar',
     };
 
-    wrapper = mount(Spacing, {
+    render(Spacing, {
       propsData: {
         token,
       },
@@ -20,9 +16,9 @@ describe('Spacing.vue', () => {
   });
 
   it('render given Spacing', () => {
-    const { element: SpacingElement } = wrapper.find('[data-testid=box]');
+    const spacingElement = screen.getByTestId('box');
 
-    const styles = window.getComputedStyle(SpacingElement);
+    const styles = window.getComputedStyle(spacingElement);
 
     expect(styles['padding']).toBe('20px');
     expect(styles['width']).toBe('20px');
@@ -30,7 +26,7 @@ describe('Spacing.vue', () => {
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p');
+    const variableElement = screen.getByText('20px');
 
     expect(variableElement.textContent).toBe('20px');
   });

@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import Opacity from '@/presenters/Opacity/Opacity.vue';
 
 describe('Opacity.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '0.5',
       declaration: 'opacityVar',
     };
 
-    wrapper = mount(Opacity, {
+    render(Opacity, {
       propsData: {
         token,
       },
@@ -20,16 +16,16 @@ describe('Opacity.vue', () => {
   });
 
   it('render given Opacity', () => {
-    const { element: OpacityElement } = wrapper.find('[data-testid=box]');
+    const opacityElement = screen.getByTestId('box');
 
-    const styles = window.getComputedStyle(OpacityElement);
+    const styles = window.getComputedStyle(opacityElement);
 
     // @ts-ignore
     expect(styles['opacity']).toBe('0.5');
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p');
+    const variableElement = screen.getByText('0.5');
 
     expect(variableElement.textContent).toBe('0.5');
   });

@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import FontSize from '@/presenters/FontSize/FontSize.vue';
 
 describe('FontSize.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '20px',
       declaration: 'fontSize',
     };
 
-    wrapper = mount(FontSize, {
+    render(FontSize, {
       propsData: {
         token,
       },
@@ -20,9 +16,7 @@ describe('FontSize.vue', () => {
   });
 
   it('render given FontSize', () => {
-    const { element: colorElement } = wrapper.find(
-      '[data-testid=fontSizeSample]'
-    );
+    const colorElement = screen.getByTestId('fontSizeSample');
 
     const styles = window.getComputedStyle(colorElement);
 
@@ -31,7 +25,7 @@ describe('FontSize.vue', () => {
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p:not([data-testid])');
+    const variableElement = screen.getByText('20px');
 
     expect(variableElement.textContent).toBe('20px');
   });

@@ -64,7 +64,7 @@ In cases where you need a custom layout, [you have presenter](https://vue-design
 ```javascript
 import { scssParser } from 'design-tokens-parser';
 // We import Color
-import { Color } from 'react-tokens-presenters';
+import { Color } from 'vue-tokens-presenters';
 
 const scssReq = ...
 

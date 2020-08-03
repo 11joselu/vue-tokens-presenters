@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import Border from '@/presenters/Border/Border.vue';
 
 describe('Border.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '1px solid tomato',
       declaration: 'border',
     };
 
-    wrapper = mount(Border, {
+    render(Border, {
       propsData: {
         token,
       },
@@ -20,14 +16,14 @@ describe('Border.vue', () => {
   });
 
   it('render given border', () => {
-    const { element: borderedElement } = wrapper.find('[data-testid=box]');
+    const borderedElement = screen.getByTestId('box');
     const styles = window.getComputedStyle(borderedElement);
 
     expect(styles['border']).toBe('1px solid tomato');
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p');
+    const variableElement = screen.getByText('1px solid tomato');
 
     expect(variableElement.textContent).toBe('1px solid tomato');
   });

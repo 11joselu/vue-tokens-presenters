@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import BorderRadius from '@/presenters/BorderRadius/BorderRadius.vue';
 
 describe('BorderRadius.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '30%',
       declaration: 'borderRadius',
     };
 
-    wrapper = mount(BorderRadius, {
+    render(BorderRadius, {
       propsData: {
         token,
       },
@@ -20,7 +16,7 @@ describe('BorderRadius.vue', () => {
   });
 
   it('render given BorderRadius', () => {
-    const { element: borderedElement } = wrapper.find('[data-testid=box]');
+    const borderedElement = screen.getByTestId('box');
 
     const styles = window.getComputedStyle(borderedElement);
 
@@ -29,7 +25,7 @@ describe('BorderRadius.vue', () => {
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p');
+    const variableElement = screen.getByText('30%');
 
     expect(variableElement.textContent).toBe('30%');
   });

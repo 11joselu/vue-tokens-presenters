@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import Color from '@/presenters/Color/Color.vue';
 
 describe('Color.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: 'red',
       declaration: 'color',
     };
 
-    wrapper = mount(Color, {
+    render(Color, {
       propsData: {
         token,
       },
@@ -20,7 +16,7 @@ describe('Color.vue', () => {
   });
 
   it('render given Color', () => {
-    const { element: colorElement } = wrapper.find('[data-testid=box]');
+    const colorElement = screen.getByTestId('box');
 
     const styles = window.getComputedStyle(colorElement);
 
@@ -29,7 +25,7 @@ describe('Color.vue', () => {
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p');
+    const variableElement = screen.getByText('red');
 
     expect(variableElement.textContent).toBe('red');
   });

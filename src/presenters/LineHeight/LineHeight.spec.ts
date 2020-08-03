@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import LineHeight from '@/presenters/LineHeight/LineHeight.vue';
 
 describe('LineHeight.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '1.5rem',
       declaration: 'LineHeight',
     };
 
-    wrapper = mount(LineHeight, {
+    render(LineHeight, {
       propsData: {
         token,
       },
@@ -20,18 +16,16 @@ describe('LineHeight.vue', () => {
   });
 
   it('render given LineHeight', () => {
-    const { element: colorElement } = wrapper.find(
-      '[data-testid=LineHeightSample]'
-    );
+    const lineHeightElement = screen.getByTestId('LineHeightSample');
 
-    const styles = window.getComputedStyle(colorElement);
+    const styles = window.getComputedStyle(lineHeightElement);
 
     // @ts-ignore
     expect(styles['line-height']).toBe('1.5rem');
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p:not([data-testid])');
+    const variableElement = screen.getByText('1.5rem');
 
     expect(variableElement.textContent).toBe('1.5rem');
   });

@@ -1,18 +1,14 @@
-import { mount, Wrapper } from '@vue/test-utils';
-import Vue from 'vue';
-
+import { render, screen } from '@testing-library/vue';
 import Height from '@/presenters/Height/Height.vue';
 
 describe('Height.vue', () => {
-  let wrapper: Wrapper<Vue>;
-
   beforeEach(() => {
     const token = {
       value: '10rem',
       declaration: 'heightVar',
     };
 
-    wrapper = mount(Height, {
+    render(Height, {
       propsData: {
         token,
       },
@@ -20,16 +16,16 @@ describe('Height.vue', () => {
   });
 
   it('render given Height', () => {
-    const { element: HeightElement } = wrapper.find('[data-testid=box]');
+    const heightElement = screen.getByTestId('box');
 
-    const styles = window.getComputedStyle(HeightElement);
+    const styles = window.getComputedStyle(heightElement);
 
     // @ts-ignore
     expect(styles['height']).toBe('10rem');
   });
 
   it('render variable value', () => {
-    const { element: variableElement } = wrapper.find('p');
+    const variableElement = screen.getByText('10rem');
 
     expect(variableElement.textContent).toBe('10rem');
   });
