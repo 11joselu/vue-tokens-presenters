@@ -1,14 +1,34 @@
 {
   "name": "vue-tokens-presenters",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
+  "main": "dist/vue-tokens-presenters.common.js",
+  "web": "dist/bootstrap-vue.umd.js",
+  "unpkg": "dist/vue-tokens-presenters.umd.min.js",
+  "source": "src/index.ts",
+  "style": "dist/vue-tokens-presenters.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/11joselu/vue-tokens-presenters.git"
+  },
+  "keywords": [
+    "Presenter",
+    "Storybook"
+  ],
+  "author": "Jose Cabrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/11joselu/vue-tokens-presenters/issues"
+  },
+  "homepage": "https://github.com/11joselu/vue-tokens-presenters.git#readme",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target=lib",
     "lint": "vue-cli-service lint",
     "storybook": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
     "storybook:export": "vue-cli-service storybook:build -c config/storybook",
-    "test": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
