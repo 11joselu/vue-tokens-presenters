@@ -1,0 +1,11 @@
+config/
+node_modules/
+.browserslistrc
+babel.config.js
+jest.config.js
+tsconfig.json
+media/
+.prettierrc
+.eslintrc.js
+*stories.mdx
+*spec.ts
