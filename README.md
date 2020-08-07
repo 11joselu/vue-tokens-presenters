@@ -41,6 +41,7 @@ See [demo](/demo) directory for examples or [presenters](src/presenters) preproc
 
 ```javascript
 import { scssParser } from 'design-tokens-parser';
+import TokenSumarry from 'vue-tokens-presenters';
 
 const scssReq = require.context(
   `!!raw-loader!../<MY_PATH>`,
@@ -64,7 +65,7 @@ In cases where you need a custom layout, [you have presenter](https://vue-design
 ```javascript
 import { scssParser } from 'design-tokens-parser';
 // We import Color
-import { Color } from 'vue-tokens-presenters';
+import {Color} from 'vue-tokens-presenters';
 
 const scssReq = ...
 
@@ -73,7 +74,6 @@ const files = scssReq.keys();
 const tokens = ...
 
 tokens.map((token, index) => <Color {...token} key={index} />)
-<TokenSumarry tokens={tokens}/>
 ```
 
 ## Presenters
