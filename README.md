@@ -35,8 +35,6 @@ npm i -S vue-tokens-presenters
 
 Works well with [design-tokens-parser](https://github.com/11joselu/design-tokens-parser.git)
 
-See [demo](/demo) directory for examples or [presenters](src/presenters) preprocessors demos examples
-
 ### Working with design-tokens-parser
 
 ```javascript
