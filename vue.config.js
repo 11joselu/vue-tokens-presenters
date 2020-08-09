@@ -22,4 +22,5 @@ module.exports = {
     config.entry('app').clear().add('./src/index.ts').end();
   },
   parallel: false,
+  css: { extract: false },
 };
