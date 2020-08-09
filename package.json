@@ -23,7 +23,7 @@
   "homepage": "https://github.com/11joselu/vue-tokens-presenters.git#readme",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target=lib",
+    "build": "vue-cli-service build --target=lib --name vue-tokens-presenters ./src/index.ts",
     "lint": "vue-cli-service lint --ignore-path ./.eslintignore",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:export": "build-storybook -s public",

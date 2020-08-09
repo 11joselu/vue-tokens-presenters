@@ -1,2 +1,2 @@
 export * from './presenters';
-export { default as TokensSummary } from './TokensSumary/TokensSumary.vue';
+export { default as TokensSummary } from './TokensSummary/TokensSummary.vue';

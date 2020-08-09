@@ -42,13 +42,13 @@ import * as presenters from '@/presenters/';
 export default class TokensSummary extends Vue {
   @Prop({ required: true }) private readonly tokens!: Token[];
 
-  mounted(): undefined | never {
+  mounted(): void | never {
     if (!Array.isArray(this.tokens)) {
       throw new Error(`Tokens should be array, received ${typeof this.tokens}`);
     }
   }
 
-  get groupedTokens(): Record<string, Token[]> {
+  get groupedTokens(): [string, Token[]][] {
     const group = groupByTokenName(this.tokens);
 
     return Object.entries(group);
