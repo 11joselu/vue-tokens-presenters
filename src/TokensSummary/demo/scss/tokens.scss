@@ -1,0 +1,109 @@
+/**
+* @tokens Border
+*/
+$border-blue: 1px solid #227c9d;
+$border-sea: 2px solid #17c3b2;
+$border-yellow: 4px solid #ffcb77;
+$border-floral-white: 6px solid #fef9ef;
+$border-coral: 8px solid #fe6d73;
+
+/**
+* @tokens BorderRadius
+*/
+$border-radius-xs: 4px;
+$border-radius-x: 8px;
+$border-radius-m: 12px;
+$border-radius-l: 16px;
+$border-radius-xl: 20px;
+$border-radius-circle: 50%;
+
+/**
+* @tokens Color
+*/
+$blue: #227c9d;
+$sea: #17c3b2;
+$yellow: #ffcb77;
+$floral-white: #fef9ef;
+$coral: #fe6d73;
+
+/**
+* @tokens FontSize
+*/
+$size-sm: 12px;
+$size-md: 16px;
+$size-lg: 24px;
+$size-xl: 32px;
+$size-2xl: 40px;
+$size-3xl: 48px;
+
+/**
+* @tokens FontWeight
+*/
+$weight-regular: 400;
+$weight-semi-bold: 600;
+$weight-bold: 700;
+
+/**
+* @tokens Height
+*/
+$height-3xs: 2px;
+$height-2xs: 4px;
+$height-xs: 8px;
+$height-sm: 12px;
+$height-md: 16px;
+$height-lg: 24px;
+$height-xl: 32px;
+$height-2xl: 40px;
+$height-3xl: 48px;
+
+/**
+* @tokens LineHeight
+*/
+$line-height-xs: 0.85rem;
+$line-height-sm: 1rem;
+$line-height-md: 1.2rem;
+$line-height-lg: 1.5rem;
+$line-height-xl: 2.5rem;
+
+/**
+* @tokens Opacity
+*/
+$opacity-xs: 0.9;
+$opacity-x: 0.7;
+$opacity-m: 0.5;
+$opacity-l: 0.4;
+$opacity-xl: 0.2;
+
+/**
+* @tokens Shadow
+*/
+$shadow-xs: rgba(0, 0, 0, 0.7);
+$shadow-outside: 0 5px 10px rgba(235, 25, 110, 1);
+$shadow-inset: inset 0 0 0 4px rgba(235, 25, 110, 1);
+$shadow-3xl: 0 0.2rem 1rem black;
+
+/**
+* @tokens Spacing
+*/
+$spacing-3xs: 2px;
+$spacing-2xs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 40px;
+$spacing-3xl: 48px;
+
+/**
+* @tokens Width
+*/
+$width-3xs: 20px;
+$width-2xs: 40px;
+$width-xs: 80px;
+$width-sm: 120px;
+$width-md: 160px;
+$width-lg: 240px;
+$width-xl: 320px;
+$width-2xl: 400px;
+$width-3xl: 480px;

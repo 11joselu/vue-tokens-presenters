@@ -1,5 +1,5 @@
 module.exports = {
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     // These are some necessary steps changing the default webpack config of the Vue CLI
     // that need to be changed in order for Typescript based components to generate their
     // declaration (.d.ts) files.
@@ -12,12 +12,14 @@ module.exports = {
         .rule('ts')
         .use('ts-loader')
         .loader('ts-loader')
-        .tap(opts => {
+        .tap((opts) => {
           opts.transpileOnly = false;
           opts.happyPackMode = false;
           return opts;
         });
     }
+
+    config.entry('app').clear().add('./src/index.ts').end();
   },
   parallel: false,
 };

@@ -1,12 +1,2 @@
-export { default as Border } from './presenters/Border/Border.vue';
-export { default as BorderRadius } from './presenters/BorderRadius/BorderRadius.vue';
-export { default as Color } from './presenters/Color/Color.vue';
-export { default as FontSize } from './presenters/FontSize/FontSize.vue';
-export { default as FontWeight } from './presenters/FontWeight/FontWeight.vue';
-export { default as Height } from './presenters/Height/Height.vue';
-export { default as Width } from './presenters/Width/Width.vue';
-export { default as LineHeight } from './presenters/LineHeight/LineHeight.vue';
-export { default as Opacity } from './presenters/Opacity/Opacity.vue';
-export { default as Shadow } from './presenters/Shadow/Shadow.vue';
-export { default as Spacing } from './presenters/Spacing/Spacing.vue';
-export * from './presenters/TokenDeclaration';
+export * from './presenters';
+export { default as TokensSummary } from './TokensSumary/TokensSumary.vue';
