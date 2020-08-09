@@ -74,6 +74,14 @@ const tokens = ...
 tokens.map((token, index) => <Color {...token} key={index} />)
 ```
 
+### Styles
+
+You should import vue-tokens-presenters styles
+
+```
+@import '~vue-tokens-presenters/dist/vue-tokens-presenters.css';
+```
+
 ## Presenters
 
 Presenters are used to render examples for your design tokens. [View availables presenters](https://vue-design-tokens-presenter.netlify.app/)
