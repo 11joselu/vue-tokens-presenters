@@ -1,6 +1,6 @@
 {
   "name": "vue-tokens-presenters",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "main": "dist/vue-tokens-presenters.common.js",
   "web": "dist/bootstrap-vue.umd.js",
